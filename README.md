@@ -21,3 +21,5 @@ Make sure you provide an empty folder path to save your submission.
 For more details, read the comments in the script
 
 After all these steps , simply run the script and that is all required to make your coding library of your codeforces submission. 
+
+Note: Make sure to have a good internet connection otherwise the script might crash.
