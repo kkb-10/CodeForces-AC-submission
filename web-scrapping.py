@@ -19,7 +19,7 @@ print("Scrapping the AC Solutions of "+cf_handle + "...........", end="\n\n\n")
 
 count =1
 
-for i in range (3,no_of_pages+1):
+for i in range (1,no_of_pages+1):
     print("Scrapping Page " + str(i) + "......")
     print("***********************************",end="\n\n")
     req_url =url + str(i)
