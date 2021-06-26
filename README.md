@@ -22,4 +22,4 @@ For more details, read the comments in the script
 
 After all these steps , simply run the script and that is all required to make your coding library of your codeforces submission. 
 
-Note: Make sure to have a good internet connection otherwise the script might crash.
+**Note: Make sure to have a good internet connection otherwise the script might crash.**
