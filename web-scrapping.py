@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import requests  
 import os
 
-###########SCRIPT To SAVE ALL AC SUBMISSION OF YOUR CF PROFILE ##########
+########### SCRIPT TO SAVE ALL AC SUBMISSION OF YOUR CF PROFILE #########
 
 # Provide the below details for your codeforces profile
 
