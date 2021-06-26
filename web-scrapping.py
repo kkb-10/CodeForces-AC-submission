@@ -24,7 +24,12 @@ for i in range (start_page,no_of_pages+1):
     print("***********************************",end="\n\n")
     req_url =url + str(i)
 
-    html_content = requests.get(req_url).text  
+    while(1):
+        try:
+            html_content = requests.get(req_url).text  
+            break
+        except requests.exceptions.ConnectionError:
+            print("No response from server. Trying to reconnect....",end="\n")
     
     soup = BeautifulSoup(html_content, "html5lib")  
 
@@ -49,7 +54,13 @@ for i in range (start_page,no_of_pages+1):
 
         if(subm_verdict=="Accepted"):   # if we get an AC submission 
 
-            html_c = requests.get(subm_url)
+            while(1):
+                try:
+                    html_c = requests.get(subm_url)
+                    break
+                except requests.exceptions.ConnectionError:
+                    print("No response from server. Trying to reconnect....",end="\n")
+                    
             soup_final = BeautifulSoup(html_c.content, "html5lib")  
             code_line=soup_final.find_all("pre")
             code=code_line[0].text
