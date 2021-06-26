@@ -4,17 +4,17 @@ A python script that will scrape all the AC submission of your codeforces profil
 ## How to run the script
 
 ### Install following dependencies
--pip install selenium  
--pip install pandas
--pip install bs4  
--pip install requests
+- pip install selenium  
+- pip install pandas
+- pip install bs4  
+- pip install requests
 
 ### Provide Required details in the script
 Open any code editor and provide following details in the script:
--codeforces profile
--no of submission pages 
--path of your local repo 
--partymember id using inspect element
+- codeforces profile
+- no of submission pages 
+- path of your local repo 
+- partymember id using inspect element
 
 Make sure you provide an empty folder path to save your submission.
 
