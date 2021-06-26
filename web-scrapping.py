@@ -29,7 +29,7 @@ for i in range (start_page,no_of_pages+1):
             html_content = requests.get(req_url).text  
             break
         except requests.exceptions.ConnectionError:
-            print("No response from server. Trying to reconnect....",end="\n")
+            print("No response from server. Trying to reconnect....",end="\n\n")
     
     soup = BeautifulSoup(html_content, "html5lib")  
 
@@ -59,7 +59,7 @@ for i in range (start_page,no_of_pages+1):
                     html_c = requests.get(subm_url)
                     break
                 except requests.exceptions.ConnectionError:
-                    print("No response from server. Trying to reconnect....",end="\n")
+                    print("No response from server. Trying to reconnect....",end="\n\n")
                     
             soup_final = BeautifulSoup(html_c.content, "html5lib")  
             code_line=soup_final.find_all("pre")
