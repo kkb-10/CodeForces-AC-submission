@@ -18,22 +18,23 @@ url="https://codeforces.com/submissions/" + cf_handle + "/page/"
 
 print("Scrapping the AC Solutions of "+cf_handle + "...........", end="\n\n\n")
 
+print("*** Let the magic begin ***",end="\n\n")
+
 
 for i in range (start_page,no_of_pages+1):
     print("Scrapping Page " + str(i) + "......")
     print("***********************************",end="\n\n")
     req_url =url + str(i)
 
+    
     while(1):
         try:
             html_content = requests.get(req_url).text  
             break
         except requests.exceptions.ConnectionError:
             print("No response from server. Trying to reconnect....",end="\n\n")
-    
+
     soup = BeautifulSoup(html_content, "html5lib")  
-
-
     table=soup.find_all("tr",{"partymemberids":";"+partymemberid+";"})
     for row in table:
         row_container=row.find_all("td")
@@ -53,23 +54,32 @@ for i in range (start_page,no_of_pages+1):
         problem_name="cf-"+(row_container[3].text.strip())
 
         if(subm_verdict=="Accepted"):   # if we get an AC submission 
-
+            
             while(1):
                 try:
                     html_c = requests.get(subm_url)
                     break
                 except requests.exceptions.ConnectionError:
                     print("No response from server. Trying to reconnect....",end="\n\n")
-                    
+
             soup_final = BeautifulSoup(html_c.content, "html5lib")  
             code_line=soup_final.find_all("pre")
             code=code_line[0].text
 
+            # Handling name issues
+            a=0
+            for it in problem_name:
+                if ((it>= 'a' and it<='z') or ( it >='A' and it<='Z') or it==' '):
+                    a=10
+                else:
+                    problem_name=problem_name.replace(it,'-')
+
+
             # Storing into the local repo
 
-            final_path = path + "problem - " + submission_id  + " - code.txt"
-            
-            if not os.path.exists(path + "problem - " + submission_id + " - code." + subm_type): # If that file name already exists, then it doesn't add it to repo
+            final_path = path + problem_name  + " - code.txt"
+
+            if not os.path.exists(path + problem_name + " - code." + subm_type): # If that file name already exists, then it doesn't add it to repo
                 file = open(final_path, "w+") 
                 file.write(code)
                 file.close()
@@ -80,5 +90,4 @@ for i in range (start_page,no_of_pages+1):
                 os.rename(final_path, base + ext)
 
             print(problem_name)
-            print("Saving file at: " + path + "problem - " + submission_id + " - code." + subm_type ,end="\n\n")
-
+            print("Saving file at: " + path + problem_name + " - code." + subm_type ,end="\n\n")
