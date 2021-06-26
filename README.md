@@ -1,4 +1,4 @@
-# CodeForces-AC-submission
+# CodeForces-AC-submission-scrapper
 A python script that will scrape all the AC submission of your codeforces profile and save it in your local repo
 
 ## How to run the script
