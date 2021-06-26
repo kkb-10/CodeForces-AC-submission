@@ -26,7 +26,6 @@ for i in range (start_page,no_of_pages+1):
     print("***********************************",end="\n\n")
     req_url =url + str(i)
 
-    
     while(1):
         try:
             html_content = requests.get(req_url).text  
