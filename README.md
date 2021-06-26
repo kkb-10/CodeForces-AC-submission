@@ -15,6 +15,7 @@ Open any code editor and provide following details in the script:
 - no of submission pages 
 - path of your local repo 
 - partymember id using inspect element
+- starting page from where scraping will start
 
 Make sure you provide an empty folder path to save your submission.
 
@@ -37,4 +38,4 @@ After all these steps , simply run the script and that is all required to make y
 
 **Note:** Make sure to have a good internet connection otherwise the script might crash.
 
-**Note:** If incase your script crashes, you can resume the script from the same submission page by changing the starting page number at **line 22** in the for loop
+**Note:** If incase your script crashes, you can resume the script from the same submission page by changing the starting page number 
