@@ -35,4 +35,5 @@ If you want to run the script for any other language, add those conditions from 
 
 After all these steps , simply run the script and that is all required to make your coding library of your codeforces submission. 
 
-**Note: Make sure to have a good internet connection otherwise the script might crash.**
+**Note:** Make sure to have a good internet connection otherwise the script might crash.
+**Note:** If incase your script crashes, you can resume the script from the same submission page by changing the starting page number at **line 22** in the for loop
