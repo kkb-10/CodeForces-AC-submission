@@ -37,3 +37,13 @@ If you want to run the script for any other language, add those conditions from 
 After all these steps , simply run the script and that is all required to make your coding library of your codeforces submission. 
 
 **Note:** If incase your script crashes, you can resume the script from the same submission page by changing the starting page number 
+
+## Author
+
+Kirti Kunj Bajpai
+
+Interests-> Development and Data Structures and Algorithm
+
+If you have any queries/doubts regarding the project, mail me at kkbajpai.kk@gmail.com
+
+If you liked the repo then please support it by giving it a star ⭐!
